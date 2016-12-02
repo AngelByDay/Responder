@@ -36,6 +36,7 @@ parser.add_option('-u','--upstream-proxy', action="store",      help="Upstream H
 parser.add_option('-F','--ForceWpadAuth',  action="store_true", help="Force NTLM/Basic authentication on wpad.dat file retrieval. This may cause a login prompt. Default: False", dest="Force_WPAD_Auth", default=False)
 parser.add_option('--lm',                  action="store_true", help="Force LM hashing downgrade for Windows XP/2003 and earlier. Default: False", dest="LM_On_Off", default=False)
 parser.add_option('-v','--verbose',        action="store_true", help="Increase verbosity.", dest="Verbose")
+parser.add_option('-c', '--config',        action="store",      help="Specify the location of a custom Responder.conf file to use. Default: ./Responder.conf", dest="Conf_path", default=None)
 options, args = parser.parse_args()
 
 if not os.geteuid() == 0:

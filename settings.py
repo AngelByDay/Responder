@@ -69,9 +69,12 @@ class Settings:
 			print utils.color("Error: -I <if> mandatory option is missing", 1)
 			sys.exit(-1)
 
-		# Config parsing
+		# Config parsing - If a config file path has been supplied then use it, otherwise use the local Responder.conf file.
 		config = ConfigParser.ConfigParser()
-		config.read(os.path.join(self.ResponderPATH, 'Responder.conf'))
+		if options.Conf_path is None:
+		    config.read(os.path.join(self.ResponderPATH, 'Responder.conf'))
+		else:
+		    config.read(options.Conf_path)
 
 		# Servers
 		self.HTTP_On_Off     = self.toBool(config.get('Responder Core', 'HTTP'))
