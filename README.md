@@ -155,6 +155,7 @@ Options:
 	                        False
 	  --lm                  Force LM hashing downgrade for Windows XP/2003 and
 	                        earlier. Default: False
+	  -c, --config          Specify the location of a custom Responder.conf file to use. Default: ./Responder.conf
 	  -v, --verbose         Increase verbosity.
 	
 
